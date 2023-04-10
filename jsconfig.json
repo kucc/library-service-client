@@ -1,22 +1,24 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["./src/components/*"],
       "@components": ["./src/components"],
-      "@pages/*": ["./src/pages/*"],
-      "@pages": ["./src/pages"],
-      "@styles": ["./src/styles"],
-      "@styles/*": ["./src/styles/*"],
       "@hooks": ["./src/hooks"],
       "@hooks/*": ["./src/hooks/*"],
-      "@recoil": ["./src/recoil"],
-      "@recoil/*": ["./src/recoil/*"],
+      "@img": ["./src/img"],
+      "@pages": ["./src/pages"],
+      "@pages/*": ["./src/pages/*"],
       "@apis": ["./src/pages/apis"],
       "@apis/*": ["./src/pages/apis/*"],
-      "@config": ["./src/config"],
-      "@config/*": ["./src/config/*"],
+      "@styles": ["./src/styles"],
+      "@styles/*": ["./src/styles/*"],
       "@utils/*": ["./src/utils/*"],
       "@utils": ["./src/utils"],
+      "@recoil": ["./src/recoil"],
+      "@recoil/*": ["./src/recoil/*"],
+      "@config": ["./src/config"],
+      "@config/*": ["./src/config/*"],
       "@/*": ["./src/*"]
     }
   }

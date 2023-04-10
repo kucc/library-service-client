@@ -9,21 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>KUChaek</title>
-        <meta name="description" content="고려대학교 중앙컴퓨터동아리 KUCC 도서관리 시스템" />
-        <meta name="keywords" content="kucc, 도서관리, 고려대학교, 컴퓨터동아리" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo512.png" />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="KUCC의 KUChaek" />
-        <meta property="og:description" content="고려대학교 중앙컴퓨터동아리 KUCC의 도서관리 시스템입니다." />
-
-        <meta name="twitter:card" content="summary" />
-        <meta property="twitter:title" content="KUCC의 KUChaek" />
-        <meta property="twitter:description" content="고려대학교 중앙컴퓨터동아리 KUCC의 도서관리 시스템입니다." />
-      </Head>
+      <Head />
       <main className={styles.main}>
         <div className={styles.description}>
           <p>
