@@ -7,7 +7,6 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import { counterState } from "@/recoil/atoms/counterAtom";
 import Link from "next/link";
 import { useQuery } from "react-query";
-import { HomePage } from "./home";
 import Image from "next/image";
 import thumbnail from "../img/thumbnail.png";
 
