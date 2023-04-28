@@ -7,7 +7,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 import Modal from 'react-modal';
 import { StyledAuthContainer, StyledCenterContainer, StyledForm, StyledSignUpButton, StyledDescriptionBottomText, StyledDescriptionTopText } from './style';
 
-export const LoginPage = () => {
+export default function Login() {
   // const { user, isLoading } = useGetProfile();
   const { pathname } = useLocation();
   const isLogin = pathname === '/login'; // true, false
