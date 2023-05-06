@@ -10,6 +10,13 @@
     "Courier New", monospace;
 }
 
+.navItem-focus {
+  color: #c3201f;
+}
+.navItem-focus.navItem-focus::after {
+  background-color: #c3201f;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
   }
