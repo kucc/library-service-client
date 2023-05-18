@@ -13,6 +13,7 @@ import Option from "@/components/items/option";
 import NavItem from "@/components/items/nav-item";
 import OptionEx from "@/components/items/option-ex2";
 import { Alert } from "flowbite-react";
+import Slide from "@/components/items/slide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -46,6 +47,7 @@ export default function Home() {
       <div className="m-10">
         <h1>nav 바</h1>
         <NavItem />
+        <Slide />
       </div>
     </>
   );
