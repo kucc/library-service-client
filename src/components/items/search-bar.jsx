@@ -17,12 +17,14 @@ const Bar = styled.div`
     align-items: center;
 `
 
-export default function SearchBar() {
+const SearchBar = (props) => {
   
 
   return (
     <>
-        <Bar>검색</Bar>
+        <Bar>{props.text}</Bar>
     </>
   );
 }
+
+export default SearchBar

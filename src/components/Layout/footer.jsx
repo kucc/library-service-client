@@ -9,7 +9,7 @@ import {
   StyledHorizontalLine,
   StyledRow,
   StyledTitle,
-} from "./style";
+} from "./footer-style";
   
 export default function Footer() {
 

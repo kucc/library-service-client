@@ -13,11 +13,13 @@ import Option from "@/components/items/option";
 import NavItem from "@/components/items/nav-item";
 import OptionEx from "@/components/items/option-ex2";
 import { Alert } from "flowbite-react";
-import Footer from "@/components/Layout";
+import Footer from "@/components/Layout/footer";
 import DeactBtn from "@/components/items/deact-btn";
 import DefaultBtn from "@/components/items/default-btn";
 import GenreBtn from "@/components/items/genre-btn";
 import SearchBar from "@/components/items/search-bar";
+import Slide from "@/components/items/slide";
+import List from "@/components/items/list";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -51,6 +53,7 @@ export default function Home() {
       <div className="m-10">
         <h1>nav 바</h1>
         <NavItem />
+        <Slide />
       </div>
       <div>
         <DeactBtn text="대출불가"></DeactBtn>
