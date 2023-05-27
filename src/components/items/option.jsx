@@ -10,7 +10,7 @@ const OptionButton = styled.button`
   justify-content: space-between;
 `;
 
-const OptionEx = (props) => {
+const Option = (props) => {
   const { selectOptionList } = props;
 
   const [isDropDownOpen, setIsDropDownOpen] = useState(false);
@@ -57,4 +57,4 @@ const OptionEx = (props) => {
   );
 };
 
-export default OptionEx;
+export default Option;

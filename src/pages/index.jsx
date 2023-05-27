@@ -1,24 +1,16 @@
-import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import styled from "styled-components";
-import Header from "@/components/Layout/Header";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { counterState } from "@/recoil/atoms/counterAtom";
 import Link from "next/link";
 import { useQuery } from "react-query";
 import Image from "next/image";
 import thumbnail from "../img/thumbnail.png";
-import NavItem from "@/components/items/NavItem";
+import Header from "@/components/Layout/header";
 import Option from "@/components/items/Option";
-import { Alert } from "flowbite-react";
-import Footer from "@/components/Layout/Footer";
-import DeactBtn from "@/components/items/DeactBtn";
-import DefaultBtn from "@/components/items/DefaultBtn";
-import GenreBtn from "@/components/items/GenreBtn";
-import SearchBar from "@/components/items/SearchBar";
-import Slide from "@/components/items/Slide";
-import List from "@/components/items/List";
+import Footer from "@/components/Layout/footer";
+import Slide from "@/components/items/slide";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,10 +46,10 @@ export default function Home() {
         <DeactBtn text="대출불가"></DeactBtn>
         <GenreBtn text="인공지능"></GenreBtn>
         <DefaultBtn text="대출"></DefaultBtn>
-        <SearchBar/>
+        <SearchBar />
       </div>
       <div>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );
