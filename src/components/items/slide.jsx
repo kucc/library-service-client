@@ -1,4 +1,4 @@
-import book from "../../img/book.png";
+/* import book from "../../img/book.png";
 import Image from "next/image";
 
 const SlideList = [{ id: "1", img: book }, { id: "2", img: book }, { id: "3", img: book }, { id: "4", img: book }, { id: "5", img: book }, { id: "67", img: book }, { id: "7", img: book }, { id: "8", img: book }, { id: "9", img: book }, { id: "10", img: book }];
@@ -21,3 +21,4 @@ const Slide = (props) => {
 };
 
 export default Slide;
+ */

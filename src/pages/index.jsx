@@ -53,7 +53,6 @@ export default function Home() {
       <div className="m-10">
         <h1>nav 바</h1>
         <NavItem />
-        <Slide />
       </div>
       <div>
         <DeactBtn text="대출불가"></DeactBtn>

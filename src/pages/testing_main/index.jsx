@@ -43,7 +43,6 @@ export default function Home() {
       </div>
       <Box>
         <NavItem/>
-        <Slide/>
       </Box>
       <div>
         <Footer/>
