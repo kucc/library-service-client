@@ -5,14 +5,11 @@ const SlideList = [{ id: "1", img: book }, { id: "2", img: book }, { id: "3", im
 
 const Slide = (props) => {
     return (
-        <div className="flex w-3/4 bg-red overflow-scroll">
+        <div className="flex w-[800px] bg-red overflow-scroll">
             {SlideList.map((item, i) => (
-                <div className="h-54 w-42 m-2">
-                    <a
-                        key={i}
-                        href={`/detail/${item.id}`}
-                    >
-                        <Image src={item.img} alt={i + "thBook"} width="153px" height="204px" />
+                <div className="h-[204px] w-[153px] m-2 relative" key={i}>
+                    <a href={`/detail/${item.id}`} >
+                        <Image src={item.img} alt={i + "thBook"} width={153} className="object-cover" style={{ maxWidth: "153px" }} />
                     </a>
                 </div>
             ))}
