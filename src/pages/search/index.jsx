@@ -5,16 +5,16 @@ import { useRouter } from 'next/router'
 
 const Search = () => {
     const router = useRouter()
-    const { text } = router.query
+    const { query } = router
 
     return (
         <>
-            <p>Search: {text}</p>
+            <p>Search: {query.bookname}</p>
             <Link href="detail/asdf">
                 <div style={{display:"flex"}}>
                     <Image src={logo} alt="test" width={500} />
                     <div>
-                        <h1>책이름 블라블라</h1>
+                        <h1>책이름</h1>
                     </div>
                 </div>
             </Link>

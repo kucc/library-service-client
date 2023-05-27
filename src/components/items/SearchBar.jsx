@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useRouter } from "next/router"
 
-const Bar = styled.div`
+
+const Bar = styled.input`
     width: 600px;
     height: 75px;
     border-radius: 60px;
@@ -17,12 +19,32 @@ const Bar = styled.div`
     align-items: center;
 `
 
-const SearchBar = (props) => {
-  
 
+
+const SearchBar = (props) => {
+  const [search, setSearch] = useState("")
+  const router = useRouter()
+
+  const searchdata = event => {
+    setSearch(event.target.value);
+    console.log(search);
+  }
+
+  const onSubmitSearch = (e) => {
+    if (e.key === "Enter") {
+      router.push({
+        pathname: '/search',
+        query: {"bookname": search}
+      })
+    }
+  }
+  
   return (
     <>
-        <Bar>{props.text}</Bar>
+        <Bar placeholder = "검색"
+        value = {search}
+        onChange = {searchdata}
+        onKeyPress = {onSubmitSearch}/>
     </>
   );
 }

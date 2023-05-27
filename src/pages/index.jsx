@@ -51,7 +51,7 @@ export default function Home() {
         <DeactBtn text="대출불가"></DeactBtn>
         <GenreBtn text="인공지능"></GenreBtn>
         <DefaultBtn text="대출"></DefaultBtn>
-        <SearchBar />
+        <SearchBar/>
       </div>
       <div>
         <Footer />
