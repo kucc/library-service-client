@@ -8,9 +8,14 @@ import { useQuery } from "react-query";
 import Image from "next/image";
 import thumbnail from "../img/thumbnail.png";
 import Header from "@/components/Layout/header";
+import NavItem from "@/components/items/NavItem";
 import Option from "@/components/items/Option";
 import Footer from "@/components/Layout/footer";
 import Slide from "@/components/items/slide";
+import DeactBtn from "@/components/items/DeactBtn";
+import DefaultBtn from "@/components/items/DefaultBtn";
+import GenreBtn from "@/components/items/GenreBtn";
+import SearchBar from "@/components/items/SearchBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
