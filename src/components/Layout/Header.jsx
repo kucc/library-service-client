@@ -6,7 +6,6 @@ import Link from "next/link";
 const Header = ({ headerItems = [] }) => {
   return (
     <>
-      {}
       <div className=" w-full max-w-screen-xl h-[136px] shadow-md border-t-[18px] border-crimson-500">
         <div className="flex items-center justify-around h-full">
           <div>
