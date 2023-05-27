@@ -2,7 +2,7 @@ import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
 
 import BoardTitle from "@/components/Board/BoardTitle";
-import BookApplyCurrent from "@/components/Board/bookApplyCurrent";
+import BookApplyCurrent from "@/components/Board/BookApplyCurrent";
 import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import { useRecoilValue } from "recoil";
 
