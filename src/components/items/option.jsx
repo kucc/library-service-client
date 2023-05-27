@@ -1,49 +1,60 @@
+import { useMemo, useState } from "react";
+import arrow from "../../../public/arrow.svg";
+import Image from "next/image";
 import styled from "styled-components";
-// import arrow from "../../../public/arrow.svg";
-// import Image from "next/image";
-import { useRef, useState } from "react";
 
-const SelectBoxWrapper = styled.div`
-  display: flex;
-`;
-
-const SelectBox = styled.select`
+const OptionButton = styled.button`
   width: 150px;
   height: 50px;
-  border: 1px solid grey;
-  border-radius: 50px;
-  padding: 0 21px;
-  -o-appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: url(arrow);
-  box-shadow: 0px 1px 1px 1px #afafaf;
+  display: flex;
+  justify-content: space-between;
 `;
 
-const ArrowWrapper = styled.div`
-  position: relative;
-  left: -40px;
-  top: 18px;
-`;
+const OptionEx = (props) => {
+  const { selectOptionList } = props;
 
-const Option = ({ selectOptionList }) => {
-  const selectRef = useRef();
-  const openDropdown = () => {};
-
+  const [isDropDownOpen, setIsDropDownOpen] = useState(false);
+  const [selectedNavItem, setSelectedNavItem] = useState(selectOptionList[0]);
   return (
-    <SelectBoxWrapper>
-      <SelectBox ref={selectRef}>
-        {selectOptionList.map((Option, index) => (
-          <option key={index}> {Option}</option>
-        ))}
-      </SelectBox>
-      <ArrowWrapper onClick={openDropdown}>
-        {/* 이미지 추가할 경우 이미지 누르면 option 안 열림 */}
-        {/* <Image priority="true" src={arrow} alt="(선택)" /> */}
-      </ArrowWrapper>
-    </SelectBoxWrapper>
+    <>
+      <OptionButton
+        id="dropdownDefaultButton"
+        data-dropdown-toggle="dropdown"
+        className="inline-flex items-center px-5 py-2 text-sm font-medium text-center text-black border rounded-full shadow-md focus:ring focus:ring-blue-300 border-slate-400"
+        type="button"
+        onClick={() => setIsDropDownOpen((prev) => !prev)}
+        // onBlur={() => setIsDropDownOpen((prev) => !prev)}
+      >
+        {selectedNavItem}
+        <Image className="w-6 ml-4" src={arrow} alt="선택" />
+      </OptionButton>
+      <div
+        id="dropdown"
+        className={`absolute z-10 ${
+          !isDropDownOpen ? "hidden" : ""
+        } bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700`}
+      >
+        <ul className="py-2 text-sm text-gray-700 " aria-labelledby="dropdownDefaultButton">
+          {selectOptionList.map((opt, i) => {
+            return (
+              <li key={i}>
+                <a
+                  href="#"
+                  className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  onClick={() => {
+                    setSelectedNavItem(opt);
+                    setIsDropDownOpen((prev) => !prev);
+                  }}
+                >
+                  {opt}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
   );
 };
 
-export default Option;
+export default OptionEx;
