@@ -1,13 +1,11 @@
 const BookApplyCurrent = ({ num = "No", bookInfo, date = "신청일", isTitle = false }) => {
-  const fontWeight = isTitle ? 700 : 500;
-  const borderWidth = isTitle ? 2 : 1;
-  const height = isTitle ? 36 : 100;
-  const dateColor = isTitle ? "#000" : "#777777";
+  const fontWeight = isTitle ? "font-700" : "font-500";
+  const borderWidth = isTitle ? "border-b-[2px]" : "border-b-[1px]";
+  const height = isTitle ? "h-[36px]" : "h-[100px]";
+  const dateColor = isTitle ? "text-[#000000]" : "text-[#777777]";
 
   return (
-    <div
-      className={`flex font-${fontWeight} border-black border-b-[${borderWidth}px] items-center h-[${height}px]`}
-    >
+    <div className={`flex ${fontWeight} border-black ${borderWidth} items-center ${height}`}>
       <div className="w-1/6 text-left">{num}</div>
       <div className="w-4/6 ">
         {isTitle ? (
@@ -16,12 +14,12 @@ const BookApplyCurrent = ({ num = "No", bookInfo, date = "신청일", isTitle = 
           bookInfo && (
             <div className="flex">
               <div className="w-3/4 text-ellipsis">{bookInfo.title}</div>
-              <div className={`text-[${dateColor}]`}>{bookInfo.publish}</div>
+              <div className={`${dateColor}`}>{bookInfo.publish}</div>
             </div>
           )
         )}
       </div>
-      <div className={`w-1/6 text-left text-[${dateColor}]`}>{date}</div>
+      <div className={`w-1/6 text-left ${dateColor}`}>{date}</div>
     </div>
   );
 };
