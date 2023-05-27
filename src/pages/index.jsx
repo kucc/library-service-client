@@ -2,7 +2,7 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import styled from "styled-components";
-import Header from "@/components/Layout/Header/index";
+import Header from "@/components/Layout/Header";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { counterState } from "@/recoil/atoms/counterAtom";
 import Link from "next/link";
