@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useQuery } from "react-query";
 import Image from "next/image";
 import thumbnail from "@/img/thumbnail.png";
-import Option from "@/components/items/Option";
 import NavItem from "@/components/items/NavItem";
 import OptionEx from "@/components/items/Option";
 import { Alert } from "flowbite-react";
