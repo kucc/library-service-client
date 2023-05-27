@@ -1,7 +1,7 @@
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
-import BoardContent from "@/components/board/BoardContent";
-import BoardTitle from "@/components/board/BoardTitle";
+import BoardContent from "@/components/Board/BoardContent";
+import BoardTitle from "@/components/Board/BoardTitle";
 import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import Link from "next/link";
 import { useRouter } from "next/router";
