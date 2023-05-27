@@ -16,11 +16,12 @@ import DeactBtn from "@/components/items/DeactBtn";
 import DefaultBtn from "@/components/items/DefaultBtn";
 import GenreBtn from "@/components/items/GenreBtn";
 import SearchBar from "@/components/items/SearchBar";
+import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const count = useRecoilValue(counterState);
+  const headerItems = useRecoilValue(headerItemState);
 
   const testOption = [
     // { value: "출판년도순", label: "출판년도순" },
@@ -34,7 +35,7 @@ export default function Home() {
   ];
   return (
     <>
-      <Header />
+      <Header headerItems={headerItems} />
       <Image priority="true" src={thumbnail} alt="home" width={479} height={182} />
       <h1>hello this is home</h1>
       <Link href="/search?text=abc">go search</Link>
