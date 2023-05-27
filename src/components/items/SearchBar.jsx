@@ -41,7 +41,7 @@ const SearchBar = (props) => {
   
   return (
     <>
-        <Bar placeholder = "검색"
+        <Bar placeholder = "도서 검색"
         value = {search}
         onChange = {searchdata}
         onKeyPress = {onSubmitSearch}/>
