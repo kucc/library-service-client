@@ -13,7 +13,22 @@ module.exports = {
     "./public/**/*.html",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        crimson: "#c3201f",
+        crimson: {
+          100: "#FCE0D1",
+          200: "#F9BBA5",
+          300: "#EC8A75",
+          400: "#DB5D50",
+          500: "#c3201f",
+          600: "#A71622",
+          700: "#8C0F24",
+          800: "#710923",
+          900: "#5D0523",
+        },
+      },
+    },
   },
   plugins: [require("flowbite/plugin")],
 };
