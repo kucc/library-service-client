@@ -1,6 +1,6 @@
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
-import BoardContent from "@/components/Board/BoardContent";
+import NoticeBoardContent from "@/components/Board/NoticeBoardContent";
 import BoardTitle from "@/components/Board/BoardTitle";
 import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import Link from "next/link";
@@ -9,12 +9,12 @@ import { useRecoilValue } from "recoil";
 import LeftArrow from "@/components/items/LeftArrow";
 
 const testData = [
-  { num: "03", book_title: "서버 점검 안내", requset_date: "2023. 05. 14" },
-  { num: "02", book_title: "서버 점검 안내", requset_date: "2023. 05. 13" },
-  { num: "01", book_title: "서버 점검 안내", requset_date: "2023. 05. 12" },
+  { notice_id: "03", title: "서버 점검 안내", creation_date: "2023. 05. 14" },
+  { notice_id: "02", title: "서버 점검 안내", creation_date: "2023. 05. 13" },
+  { notice_id: "01", title: "서버 점검 안내", creation_date: "2023. 05. 12" },
 ];
 
-const Detail = () => {
+const Announce = () => {
   const router = useRouter();
   const { id } = router.query;
   const headerItems = useRecoilValue(headerItemState);
@@ -24,18 +24,20 @@ const Detail = () => {
       <Header headerItems={headerItems} />
       <div className="w-[960px] m-auto mb-[200px]">
         <div className="mt-[53px]">
-          <LeftArrow />
+          <Link href="/">
+            <LeftArrow />
+          </Link>
         </div>
-        <BoardTitle book_title="공지사항" className="mt-[53px] mb-[49px]" />
+        <BoardTitle title="공지사항" className="mt-[53px] mb-[49px]" />
         <div className="w-full">
-          <BoardContent isTitle={true} />
+          <NoticeBoardContent isTitle={true} />
           {testData.map((board) => {
             return (
-              <BoardContent
-                key={board.num}
-                num={board.num}
-                book_title={board.book_title}
-                requset_date={board.requset_date}
+              <NoticeBoardContent
+                key={board.notice_id}
+                notice_id={board.notice_id}
+                title={board.title}
+                creation_date={board.creation_date}
               />
             );
           })}
@@ -46,4 +48,4 @@ const Detail = () => {
   );
 };
 
-export default Detail;
+export default Announce;

@@ -1,10 +1,11 @@
 import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
 
-import BoardTitle from "@/components/board/BoardTitle";
-import BookApplyCurrent from "@/components/board/BookApplyCurrent";
+import BoardTitle from "@/components/Board/BoardTitle";
+import BookApplyCurrent from "@/components/Board/BookApplyCurrent";
 import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import { useRecoilValue } from "recoil";
+import LeftArrow from "@/components/items/LeftArrow";
 
 const testData = [
   {
@@ -30,7 +31,9 @@ const BookApply = () => {
     <>
       <Header headerItems={headerItems} />
       <div className="w-[960px] m-auto mb-[200px]">
-        <div className="mt-[53px]">arrow</div>
+        <div className="mt-[53px]">
+          <LeftArrow />
+        </div>
         <BoardTitle title="도서신청 현황" className="mt-[53px] mb-[49px]" />
         <div className="w-full">
           <BookApplyCurrent isTitle={true} />
