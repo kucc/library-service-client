@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Button = styled.button`
   width: 117px;
-  height: 53px;
+  height: 100%;
   border-radius: 60px;
   background: #C3201F;
-  margin: 20px;
+  margin: 3px;
 
   transition-timing-function: ease-out;
   transition-duration: 0.3s;
@@ -35,7 +35,7 @@ const ButtonText = styled.span`
 const DefaultBtn = (props) => {
 
   return (
-    <Button>
+    <Button onClick={props.handleClick}>
       <ButtonText>{props.text}</ButtonText>
     </Button>
   );

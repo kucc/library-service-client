@@ -25,11 +25,10 @@ const NavItem = styled.div`
   //focus한 css코드는 global.css에서 class로 설정
 `;
 
-const NavBarList = [{ navItem: "인기도서" }, { navItem: "신착도서" }, { navItem: "장르별" }];
-
-const NavBar = () => {
+const NavBar = (props) => {
+  const list = props.list;
   const [isFocused, setIsFocused] = useState(false);
-  const [focusedItem, setFocusedItem] = useState(NavBarList[0].navItem);
+  const [focusedItem, setFocusedItem] = useState(list[0].navItem);
   const focusRef = useRef(null);
 
   const clickFocus = () => {
@@ -39,7 +38,7 @@ const NavBar = () => {
 
   return (
     <div className="flex ">
-      {NavBarList.map((item, i) => (
+      {list.map((item, i) => (
         <NavItem
           key={i}
           onClick={() => {
