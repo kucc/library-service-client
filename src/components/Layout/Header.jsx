@@ -18,7 +18,7 @@ const Header = ({ headerItems = [] }) => {
           </div>
           <div className="flex gap-5">
             {headerItems.map((headerItem, i) => {
-              return <div key={i}>{headerItem}</div>;
+              return <Link href={headerItem.id} key={i}>{headerItem.value}</Link>;
             })}
           </div>
         </div>
