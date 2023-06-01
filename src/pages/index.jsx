@@ -22,6 +22,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   const count = useRecoilValue(counterState);
 
+  const list = [{ navItem: "인기도서" }, { navItem: "신착도서" }, { navItem: "장르별" }];
   const testOption = [
     // { value: "출판년도순", label: "출판년도순" },
     // { value: "출판년도순", label: "출판년도순" },
@@ -44,7 +45,7 @@ export default function Home() {
       </div>
       <div className="m-10">
         <h1>nav 바</h1>
-        <NavItem />
+        <NavItem list={list} />
         <Slide />
       </div>
       <div>
