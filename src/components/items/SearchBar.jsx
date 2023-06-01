@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useRouter } from "next/router"
+import DefaultBtn from './DefaultBtn';
 
 
 const Bar = styled.input`
@@ -29,22 +30,29 @@ const SearchBar = (props) => {
     setSearch(event.target.value);
     console.log(search);
   }
+  const handleClick = () => {
+    router.push({
+      pathname: '/search',
+      query: { "bookname": search }
+    })
+  }
 
   const onSubmitSearch = (e) => {
     if (e.key === "Enter") {
-      router.push({
-        pathname: '/search',
-        query: {"bookname": search}
-      })
+      handleClick
     }
   }
-  
+
   return (
     <>
-        <Bar placeholder = "도서 검색"
-        value = {search}
-        onChange = {searchdata}
-        onKeyPress = {onSubmitSearch}/>
+      <Bar placeholder="도서 검색"
+        value={search}
+        onChange={searchdata}
+        onKeyPress={onSubmitSearch} />
+
+      <div className="pl-2 my-auto h-[60px]" >
+        <DefaultBtn text="검색" handleClick={handleClick} />
+      </div>
     </>
   );
 }
