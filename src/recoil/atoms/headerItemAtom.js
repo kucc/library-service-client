@@ -2,5 +2,5 @@ const { atom } = require("recoil");
 
 export const headerItemState = atom({
   key: "headerItemState",
-  default: ["전체도서", "마이페이지", "로그아웃"],
+  default: [{ id: "/search", value: "전체도서" }, { id: "/mypage", value: "마이페이지" }, { id: "/logout", value: "로그아웃" }],
 });
