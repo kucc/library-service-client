@@ -3,7 +3,13 @@ import { useEffect, useState } from "react";
 import thumbnailHorizontal from "../../img/thumbnail-horizontal.png";
 import Link from "next/link";
 
-const Header = ({ headerItems = [] }) => {
+const Header = ({
+  headerItems = [
+    { id: "/search", value: "전체도서" },
+    { id: "/mypage", value: "마이페이지" },
+    { id: "/logout", value: "로그아웃" },
+  ],
+}) => {
   return (
     <>
       <div className=" w-screen h-[136px] shadow-md border-t-[18px] border-crimson-500">
@@ -17,8 +23,12 @@ const Header = ({ headerItems = [] }) => {
             <input type="text" placeholder="검색" />
           </div>
           <div className="flex gap-5">
-            {headerItems.map((headerItem, i) => {
-              return <Link href={headerItem.id} key={i}>{headerItem.value}</Link>;
+            {headerItems?.map((headerItem, i) => {
+              return (
+                <Link href={headerItem.id} key={i}>
+                  {headerItem.value}
+                </Link>
+              );
             })}
           </div>
         </div>
