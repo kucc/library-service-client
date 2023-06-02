@@ -9,9 +9,24 @@ import { useRecoilValue } from "recoil";
 import LeftArrow from "@/components/items/LeftArrow";
 
 const testData = [
-  { num: "03", book_title: "서버 점검 안내", requset_date: "2023. 05. 14" },
-  { num: "02", book_title: "서버 점검 안내", requset_date: "2023. 05. 13" },
-  { num: "01", book_title: "서버 점검 안내", requset_date: "2023. 05. 12" },
+  {
+    num: "03",
+    book_title: "서버 점검 안내",
+    requset_date: "2023. 05. 14",
+    notice_content: "오늘 폐업함",
+  },
+  {
+    num: "02",
+    book_title: "서버 점검 안내",
+    requset_date: "2023. 05. 13",
+    notice_content: "오늘 폐업함",
+  },
+  {
+    num: "01",
+    book_title: "서버 점검 안내",
+    requset_date: "2023. 05. 12",
+    notice_content: "오늘 폐업함",
+  },
 ];
 
 const Detail = () => {
