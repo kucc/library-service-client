@@ -3,8 +3,10 @@ import Header from "@components/components/Layout/Header";
 import BoardTitle from "@components/components/Board/BoardTitle";
 import Link from "next/link";
 import LeftArrow from "@components/components/items/LeftArrow";
-import PurchaseInput from "@components/components/items/PurchaseInput";
+import PurchaseInput from "@components/components/Purchase/Input";
 import { useState } from "react";
+import Radio from "@components/components/Purchase/Radio";
+import DefaultBtn from "@components/components/items/DefaultBtn";
 
 const Purchase = () => {
   const [bookTitle, setBookTitle] = useState("");
@@ -14,6 +16,10 @@ const Purchase = () => {
   const [publishYear, setPublishYear] = useState("");
   const [purchaseUrl, setPurhcaseUrl] = useState("");
   const [reason, setReason] = useState("");
+
+  const submitPurchase = () => {
+    console.log({ bookTitle, bookSubtitle, author, publisher, publishYear, purchaseUrl, reason });
+  };
 
   return (
     <>
@@ -54,7 +60,7 @@ const Purchase = () => {
           </div>
           <div className="w-[440px]">
             <PurchaseInput
-              label={"출판연도"}
+              label={"출판연도 또는 판"}
               placeholder={"출판연도를 입력해주세요"}
               value={publishYear}
               onChangeFn={setPublishYear}
@@ -67,23 +73,14 @@ const Purchase = () => {
             />
           </div>
         </div>
-        <div className="flex items-center w-full mt-[90px] ">
+        <div className="flex items-start justify-between w-full mt-[90px] ">
           <div className="w-[440px]">
-            <div>이번 학기 컴퓨터 학과 전공 도서 여부</div>
-            <div>
-              <input type="radio" value="major" id="yes" name="major" />
-              <label htmlFor="yes">예</label>
-            </div>
-            <div>
-              <input type="radio" value="major" id="no" name="major" />
-              <label htmlFor="no">아니오</label>
-            </div>
-            <div>
-              <input type="radio" value="major" id="dontKnow" name="major" />
-              <label htmlFor="dontKnow">모름</label>
-            </div>
+            <div className="mb-[25px]">이번 학기 컴퓨터 학과 전공 도서 여부</div>
+            <Radio value="yes" id="choice1" name="major" label="예" />
+            <Radio value="no" id="choice2" name="major" label="아니오" />
+            <Radio value="dontKnow" id="choice3" name="major" label="모름" />
           </div>
-          <div className="w-[440px]">
+          <div className="w-[440px] flex items-start">
             <PurchaseInput
               label={"신청 사유"}
               placeholder={"입력하세요"}
@@ -91,6 +88,9 @@ const Purchase = () => {
               onChangeFn={setReason}
             />
           </div>
+        </div>
+        <div className="text-center w-full h-[53px] mt-[130px]">
+          <DefaultBtn text="등록" handleClick={submitPurchase} />
         </div>
       </div>
       <Footer />

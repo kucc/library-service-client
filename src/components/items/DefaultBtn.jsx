@@ -1,11 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const Button = styled.button`
   width: 117px;
   height: 100%;
   border-radius: 60px;
-  background: #C3201F;
+  background: #c3201f;
   margin: 3px;
 
   transition-timing-function: ease-out;
@@ -13,7 +13,7 @@ const Button = styled.button`
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   &:active {
-    background-color: #A71622;
+    background-color: #a71622;
   }
 `;
 
@@ -22,24 +22,22 @@ const ButtonText = styled.span`
   height: 19px;
   width: 56px;
 
-  font-family: 'Abel';
+  font-family: "Abel";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
   text-align: center;
 
-  color: #FFFFFF;
+  color: #ffffff;
 `;
 
 const DefaultBtn = (props) => {
-
   return (
     <Button onClick={props.handleClick}>
       <ButtonText>{props.text}</ButtonText>
     </Button>
   );
 };
-
 
 export default DefaultBtn;
