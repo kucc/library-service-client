@@ -3,7 +3,7 @@ import Header from "@/components/Layout/Header";
 import BoardContent from "@/components/Board/BoardContent";
 import BoardTitle from "@/components/Board/BoardTitle";
 import { headerItemState } from "@/recoil/atoms/headerItemAtom";
-import Link from "next/link";
+
 import { useRouter } from "next/router";
 import { useRecoilValue } from "recoil";
 import LeftArrow from "@/components/items/LeftArrow";
@@ -41,7 +41,10 @@ const Detail = () => {
         <div className="mt-[53px]">
           <LeftArrow />
         </div>
-        <BoardTitle book_title="공지사항" className="mt-[53px] mb-[49px]" />
+        <BoardTitle
+          title="책 정보가 나오겠지? 다른 페이지로 만들어야될 듯"
+          className="mt-[53px] mb-[49px]"
+        />
         <div className="w-full">
           <BoardContent isTitle={true} />
           {testData.map((board) => {

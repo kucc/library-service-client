@@ -2,6 +2,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import thumbnailHorizontal from "../../img/thumbnail-horizontal.png";
 import Link from "next/link";
+import SearchBarHeader from "../items/SearchBarHeader";
 
 const Header = ({
   headerItems = [
@@ -10,6 +11,8 @@ const Header = ({
     { id: "/logout", value: "로그아웃" },
   ],
 }) => {
+  const [headerSearchItem, setHeaderSearchItem] = useState("");
+
   return (
     <>
       <div className=" w-screen h-[136px] shadow-md border-t-[18px] border-crimson-500">
@@ -20,7 +23,7 @@ const Header = ({
             </Link>
           </div>
           <div>
-            <input type="text" placeholder="검색" />
+            <SearchBarHeader value={headerSearchItem} onChange={setHeaderSearchItem} />
           </div>
           <div className="flex gap-5">
             {headerItems?.map((headerItem, i) => {

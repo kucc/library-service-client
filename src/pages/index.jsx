@@ -55,7 +55,7 @@ export default function Home() {
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <line x1="0.5" x2="0.5" y2="255" stroke="black" stroke-dasharray="4 4" />
+              <line x1="0.5" x2="0.5" y2="255" stroke="black" strokeDasharray="4 4" />
             </svg>
           </div>
           <div className="ml-[118px]">
