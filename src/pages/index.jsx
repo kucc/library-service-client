@@ -19,19 +19,13 @@ import NoticeBoard from "@/components/items/Notice";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const count = useRecoilValue(counterState);
-
   const list = [{ navItem: "인기도서" }, { navItem: "신착도서" }, { navItem: "장르별" }];
-  const testOption = [
-    // { value: "출판년도순", label: "출판년도순" },
-    // { value: "출판년도순", label: "출판년도순" },
-    // { value: "출판년도순", label: "출판년도순" },
-    // { value: "출판년도순", label: "출판년도순" },
-    "출판년도순",
-    "인기순",
-    "제목순",
-    "저자순",
-  ];
+  // const testOption = [
+  //   "출판년도순",
+  //   "인기순",
+  //   "제목순",
+  //   "저자순",
+  // ];
   const headerItems = useRecoilValue(headerItemState);
   return (
     <div>
@@ -54,16 +48,21 @@ export default function Home() {
             <NoticeBoard text="공지사항" className="w-[348px] h-[240px]" />
           </div>
           <div>
-            <svg width="1" height="295" viewBox="0 0 1 255" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <line x1="0.5" x2="0.5" y2="255" stroke="black" stroke-dasharray="4 4" />
+            <svg
+              width="1"
+              height="295"
+              viewBox="0 0 1 255"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line x1="0.5" x2="0.5" y2="255" stroke="black" strokeDasharray="4 4" />
             </svg>
           </div>
           <div className="ml-[118px]">
             <NoticeBoard text="도서 신청 현황" className="w-[348px] h-[240px]" />
           </div>
         </div>
-        <div>
-        </div>
+        <div></div>
         <Footer />
       </div>
     </div>
