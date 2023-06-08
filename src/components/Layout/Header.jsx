@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import thumbnailHorizontal from "../../img/thumbnail-horizontal.png";
 import Link from "next/link";
 import SearchBarHeader from "../items/SearchBarHeader";
+import useScrollDirection from "@components/hooks/useScrollDirection";
 
 const Header = ({
   headerItems = [
@@ -13,9 +14,15 @@ const Header = ({
 }) => {
   const [headerSearchItem, setHeaderSearchItem] = useState("");
 
+  const scrollDirection = useScrollDirection();
+
+  const headerStyleWhenScrolling = scrollDirection === "down" ? "top-[-136px]" : "top-0";
+
   return (
     <>
-      <div className=" w-screen h-[136px] shadow-md border-t-[18px] border-crimson-500">
+      <div
+        className={`z-50 w-screen h-[136px] shadow-md border-t-[18px] border-crimson-500 bg-white`}
+      >
         <div className="flex items-center justify-around h-full">
           <div>
             <Link href="/">

@@ -5,6 +5,7 @@ import Head from "next/head";
 import { RecoilRoot } from "recoil";
 import StyledComponentsRegistry from "../../lib/registry";
 import { ThemeProvider } from "@material-tailwind/react";
+import Layout from "@components/components/Layout/Layout";
 
 const queryClient = new QueryClient();
 
@@ -34,7 +35,9 @@ export default function App({ Component, pageProps }) {
         <QueryClientProvider client={queryClient}>
           <StyledComponentsRegistry>
             <ThemeProvider>
-              <Component {...pageProps} />
+              <Layout>
+                <Component {...pageProps} />
+              </Layout>
             </ThemeProvider>
           </StyledComponentsRegistry>
         </QueryClientProvider>

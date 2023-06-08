@@ -7,6 +7,7 @@ import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import { useRouter } from "next/router";
 import { useRecoilValue } from "recoil";
 import LeftArrow from "@/components/items/LeftArrow";
+import Link from "next/link";
 
 const testData = [
   {
@@ -36,10 +37,11 @@ const Detail = () => {
 
   return (
     <>
-      <Header headerItems={headerItems} />
       <div className="w-[960px] m-auto mb-[200px]">
         <div className="mt-[53px]">
-          <LeftArrow />
+          <Link href="/">
+            <LeftArrow />
+          </Link>
         </div>
         <BoardTitle
           title="책 정보가 나오겠지? 다른 페이지로 만들어야될 듯"
@@ -59,7 +61,6 @@ const Detail = () => {
           })}
         </div>
       </div>
-      <Footer />
     </>
   );
 };

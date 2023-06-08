@@ -1,12 +1,10 @@
-import Footer from "@components/components/Layout/Footer";
-import Header from "@components/components/Layout/Header";
 import BoardTitle from "@components/components/Board/BoardTitle";
 import Link from "next/link";
-import LeftArrow from "@components/components/items/LeftArrow";
 import PurchaseInput from "@components/components/Purchase/Input";
 import { useState } from "react";
 import Radio from "@components/components/Purchase/Radio";
 import DefaultBtn from "@components/components/items/DefaultBtn";
+import LeftArrow from "./LeftArrow";
 
 const Purchase = () => {
   const [bookTitle, setBookTitle] = useState("");
@@ -23,7 +21,6 @@ const Purchase = () => {
 
   return (
     <>
-      <Header />
       <div className="w-[960px] m-auto mb-[200px] min-h-[70vh] text-[20px] ">
         <div className="mt-[53px] w-fit">
           <Link href="/">
@@ -93,7 +90,6 @@ const Purchase = () => {
           <DefaultBtn text="등록" handleClick={submitPurchase} />
         </div>
       </div>
-      <Footer />
     </>
   );
 };

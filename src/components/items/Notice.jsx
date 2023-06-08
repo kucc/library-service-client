@@ -1,4 +1,6 @@
+import noticeBoardState from "@components/recoil/atoms/noticeBoardAtom";
 import Link from "next/link";
+import { useRecoilValue } from "recoil";
 
 const Notice = ({ title = "서버점검안내", date = "2023.03.12" }) => {
   return (
@@ -49,13 +51,25 @@ const NoticeMore = () => {
 };
 
 const NoticeBoard = (props) => {
+  // 테스트 데이터
+  const notice = useRecoilValue(noticeBoardState);
+
+  console.log(notice);
   return (
     <>
       <NoticeTitle text={props.text}></NoticeTitle>
-      <Notice></Notice>
-      <Notice></Notice>
-      <Notice></Notice>
-      <Link href="/announce">
+      {notice.map((notice_content) => {
+        return (
+          <Link
+            key={notice_content.notice_id}
+            href={{ pathname: "/notice", query: { notice_id: notice_content.notice_id } }}
+          >
+            <Notice title={notice_content.title} date={notice_content.creation_date}></Notice>
+          </Link>
+        );
+      })}
+
+      <Link href="/notice">
         <NoticeMore></NoticeMore>
       </Link>
     </>

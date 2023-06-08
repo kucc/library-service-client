@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -25,15 +26,16 @@ const NavItem = styled.div`
   //focus한 css코드는 global.css에서 class로 설정
 `;
 
-const NavBar = (props) => {
-  const list = props.list;
-  const [isFocused, setIsFocused] = useState(false);
+const NavBar = ({ list, selectFn = () => {} }) => {
   const [focusedItem, setFocusedItem] = useState(list[0].navItem);
-  const focusRef = useRef(null);
 
-  const clickFocus = () => {
-    // console.log(focusRef.current.hover());
-    focusRef.current.focus();
+  const router = useRouter();
+  const navigatorRoute = (link) => {
+    console.log(link);
+    if (link) {
+      router.push(link);
+    }
+    return;
   };
 
   return (
@@ -42,8 +44,9 @@ const NavBar = (props) => {
         <NavItem
           key={i}
           onClick={() => {
-            console.log(item.navItem);
             setFocusedItem(item.navItem);
+            selectFn(item.navItem);
+            navigatorRoute(item["link"]);
           }}
           className={focusedItem == item.navItem ? "navItem-focus" : null}
         >
