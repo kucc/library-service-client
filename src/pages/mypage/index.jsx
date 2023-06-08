@@ -6,12 +6,7 @@ import DefaultBtn from "@/components/items/DefaultBtn";
 import InfoCard from "@/components/items/InfoCard";
 import { useState } from "react";
 import imgbook from "../../img/Ellipse.png";
-import Purchase from "../purchase";
-
-const MyPageComponents = {
-  대출: <div></div>,
-  신청: <Purchase />,
-};
+import Purchase from "./purchase";
 
 export default function MyPage() {
   const name = "사용자";
@@ -23,7 +18,7 @@ export default function MyPage() {
     { navItem: "대출" },
     { navItem: "예약" },
     { navItem: "전체" },
-    { navItem: "신청" },
+    { navItem: "신청", link: "/mypage/purchase" },
     { navItem: "리뷰" },
   ];
   const book = [

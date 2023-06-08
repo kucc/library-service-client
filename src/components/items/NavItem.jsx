@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
@@ -28,6 +29,15 @@ const NavItem = styled.div`
 const NavBar = ({ list, selectFn = () => {} }) => {
   const [focusedItem, setFocusedItem] = useState(list[0].navItem);
 
+  const router = useRouter();
+  const navigatorRoute = (link) => {
+    console.log(link);
+    if (link) {
+      router.push(link);
+    }
+    return;
+  };
+
   return (
     <div className="flex ">
       {list.map((item, i) => (
@@ -36,6 +46,7 @@ const NavBar = ({ list, selectFn = () => {} }) => {
           onClick={() => {
             setFocusedItem(item.navItem);
             selectFn(item.navItem);
+            navigatorRoute(item["link"]);
           }}
           className={focusedItem == item.navItem ? "navItem-focus" : null}
         >
