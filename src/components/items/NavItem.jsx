@@ -25,16 +25,8 @@ const NavItem = styled.div`
   //focus한 css코드는 global.css에서 class로 설정
 `;
 
-const NavBar = (props) => {
-  const list = props.list;
-  const [isFocused, setIsFocused] = useState(false);
+const NavBar = ({ list, selectFn = () => {} }) => {
   const [focusedItem, setFocusedItem] = useState(list[0].navItem);
-  const focusRef = useRef(null);
-
-  const clickFocus = () => {
-    // console.log(focusRef.current.hover());
-    focusRef.current.focus();
-  };
 
   return (
     <div className="flex ">
@@ -42,8 +34,8 @@ const NavBar = (props) => {
         <NavItem
           key={i}
           onClick={() => {
-            console.log(item.navItem);
             setFocusedItem(item.navItem);
+            selectFn(item.navItem);
           }}
           className={focusedItem == item.navItem ? "navItem-focus" : null}
         >

@@ -1,12 +1,10 @@
-import Footer from "@components/components/Layout/Footer";
-import Header from "@components/components/Layout/Header";
 import BoardTitle from "@components/components/Board/BoardTitle";
 import Link from "next/link";
-import LeftArrow from "@components/components/items/LeftArrow";
 import PurchaseInput from "@components/components/Purchase/Input";
 import { useState } from "react";
 import Radio from "@components/components/Purchase/Radio";
 import DefaultBtn from "@components/components/items/DefaultBtn";
+import LeftArrow from "./LeftArrow";
 
 const Purchase = () => {
   const [bookTitle, setBookTitle] = useState("");

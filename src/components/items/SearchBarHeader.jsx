@@ -6,11 +6,25 @@ const SearchBarHeader = ({ value, onChange }) => {
     onChange(e.target.value);
   };
 
-  const searchinHeader = () => {
+  const searchInHeader = () => {
     router.push({
       pathname: "/search",
       query: { searchData: value },
     });
+  };
+
+  const searchInHeaderWithEnter = (event) => {
+    if (!value) {
+      alert("검색어를 입력해주세요");
+      return;
+    }
+
+    if (event.key === "Enter") {
+      router.push({
+        pathname: "/search",
+        query: { searchData: value },
+      });
+    }
   };
   return (
     <div className="flex items-center">
@@ -18,10 +32,11 @@ const SearchBarHeader = ({ value, onChange }) => {
         type="text"
         placeholder="검색"
         onChange={handleOnchange}
+        onKeyDown={searchInHeaderWithEnter}
         value={value}
         className="w-[270px] bg-[#EBEBEB] text-[20px] py-[10px] pl-[30px] pr-[60px] rounded-full outline-none"
       />
-      <div className="relative left-[-50px] cursor-pointer" onClick={searchinHeader}>
+      <div className="relative left-[-50px] cursor-pointer" onClick={searchInHeader}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"

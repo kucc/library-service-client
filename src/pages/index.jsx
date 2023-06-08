@@ -1,8 +1,6 @@
 import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
-import styled from "styled-components";
+
 import { useRecoilState, useRecoilValue } from "recoil";
-import { counterState } from "@/recoil/atoms/counterAtom";
 import Link from "next/link";
 import { useQuery } from "react-query";
 import Image from "next/image";
@@ -26,10 +24,9 @@ export default function Home() {
   //   "제목순",
   //   "저자순",
   // ];
-  const headerItems = useRecoilValue(headerItemState);
+
   return (
     <div>
-      <Header headerItems={headerItems} className="" />
       <div className="flex flex-col">
         <div className="mt-[192px] mb-[77px] mx-auto">
           <Image priority="true" src={thumbnail} alt="home" width={479} height={182} />
@@ -62,8 +59,6 @@ export default function Home() {
             <NoticeBoard text="도서 신청 현황" className="w-[348px] h-[240px]" />
           </div>
         </div>
-        <div></div>
-        <Footer />
       </div>
     </div>
   );

@@ -8,8 +8,10 @@ const NoticeBoardItemAccordian = ({
   notice_content,
   creation_date = "작성일",
   modification_date,
+  clicked_item,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  console.log(clicked_item);
+  const [isOpen, setIsOpen] = useState(notice_id === clicked_item ? true : false);
 
   const toggleItem = () => {
     setIsOpen((prev) => !prev);
