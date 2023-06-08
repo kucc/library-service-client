@@ -8,6 +8,7 @@ import useScrollDirection from "@components/hooks/useScrollDirection";
 const Header = ({
   headerItems = [
     { id: "/search", value: "전체도서" },
+    { id: "/purchase", value: "구매신청" },
     { id: "/mypage", value: "마이페이지" },
     { id: "/logout", value: "로그아웃" },
   ],
