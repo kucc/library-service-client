@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from "next/link";
 
 export const StyledCenterContainer = styled.main`
   display: flex;
@@ -6,7 +7,7 @@ export const StyledCenterContainer = styled.main`
   position: relative;
 `;
 
-export const StyledAuthContainer = styled.div<{ isLogin }>`
+export const StyledAuthContainer = styled.div`
   width: 100%;
   max-width: 600px;
   margin: 0 auto;

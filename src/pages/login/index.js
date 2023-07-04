@@ -1,17 +1,22 @@
 import { useState } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useRouter } from 'next/router';
+import { useHistory } from 'react-router-dom';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 // import { useGetProfile } from '../../hooks/use-get-profile';
-
+import { AuthInputWithLabel } from '@components/AuthInputWithLabel';
+import { LoadingButton } from '@components/LoadingButton';
 import Modal from 'react-modal';
 import { StyledAuthContainer, StyledCenterContainer, StyledForm, StyledSignUpButton, StyledDescriptionBottomText, StyledDescriptionTopText } from './style';
 
 export default function Login() {
   // const { user, isLoading } = useGetProfile();
-  const { pathname } = useLocation();
+  const router = useRouter();
+  const { pathname } = router;
   const isLogin = pathname === '/login'; // true, false
-  const history = useHistory();
+  const RED = '#c32020'; // red color
+  const GRAY = '#B6B6B6';
+  const WHITE = '#FFFFFF';
 
   // if (isLoading) return <div />;
   // if (user) {
@@ -43,7 +48,9 @@ export default function Login() {
     // setIsLoading(true);
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      history.replace('/');
+      router.push({
+        pathname: '/',
+      })
     } catch (e) {
       const error = e;
       if (error.code === 'auth/invalid-email') {
@@ -70,7 +77,7 @@ export default function Login() {
     }
   };
 
-  function isSmallScreen(){
+  function isSmallScreen() {
     if (typeof window !== 'undefined') {
       return window.innerWidth < 800;
     }
@@ -80,15 +87,15 @@ export default function Login() {
   return (
     <StyledCenterContainer>
       <StyledAuthContainer isLogin={true}>
-      <StyledDescriptionTopText color='red'>KUCC</StyledDescriptionTopText>
-      <StyledDescriptionTopText color='black'>길라잡이</StyledDescriptionTopText>
-      {true && (
-        <StyledDescriptionBottomText>
-          고려대학교 중앙 컴퓨터 동아리
-          <br />
-          세션/스터디 관리 시스템
-        </StyledDescriptionBottomText>
-      )}
+        <StyledDescriptionTopText color='red'>KUCC</StyledDescriptionTopText>
+        <StyledDescriptionTopText color='black'>길라잡이</StyledDescriptionTopText>
+        {true && (
+          <StyledDescriptionBottomText>
+            고려대학교 중앙 컴퓨터 동아리
+            <br />
+            세션/스터디 관리 시스템
+          </StyledDescriptionBottomText>
+        )}
 
         <StyledForm>
           <AuthInputWithLabel
