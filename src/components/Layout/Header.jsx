@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import thumbnailHorizontal from "../../img/thumbnail-horizontal.png";
 import Link from "next/link";
 import SearchBarHeader from "../items/SearchBarHeader";
-import useScrollDirection from "@components/hooks/useScrollDirection";
 
 const Header = ({
   headerItems = [
@@ -15,10 +14,28 @@ const Header = ({
 }) => {
   const [headerSearchItem, setHeaderSearchItem] = useState("");
 
-  const scrollDirection = useScrollDirection();
+  const [scrollDirection, setScrollDirection] = useState("");
+  // const [yPosition, setYPosition] = useState();
+  // useEffect(() => {
+  //   const currentY = window.pageYOffset;
+  //   window.addEventListener("scroll", (e) => {
+  //     let lateY = 0;
 
-  const headerStyleWhenScrolling = scrollDirection === "down" ? "top-[-136px]" : "top-0";
+  //     lateY = window.pageYOffset;
 
+  //     const direction = lateY > currentY ? "down" : "up";
+  //     // setYPosition(window.pageYOffset);
+  //     // const direction =
+  //     //   window.pageYOffset - 10 > currentY
+  //     //     ? "down"
+  //     //     : window.pageYOffset + 10 < currentY
+  //     //     ? "up"
+  //     //     : scrollDirection;
+  //     // setScrollDirection(direction);
+  //     console.log(currentY, lateY);
+  //     console.log(direction);
+  //   });
+  // }, [scrollDirection]);
   return (
     <>
       <div
