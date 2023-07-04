@@ -25,7 +25,7 @@ const Purchase = () => {
     <>
       <div className="w-[960px] m-auto mb-[200px] min-h-[70vh] text-[20px] ">
         <div className="mt-[53px] w-fit">
-          <Link href="/mypage">
+          <Link href="/">
             <LeftArrow />
           </Link>
         </div>

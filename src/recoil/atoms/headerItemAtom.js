@@ -7,6 +7,10 @@ export const headerItemState = atom({
       id: "/search",
       value: "전체도서",
     },
+    {
+      id: "/purchase",
+      value: "구매신청",
+    },
     { id: "/mypage", value: "마이페이지" },
     { id: "/logout", value: "로그아웃" },
   ],

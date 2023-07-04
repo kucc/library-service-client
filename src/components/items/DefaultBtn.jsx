@@ -21,14 +21,12 @@ const ButtonText = styled.span`
   text-align: center;
   height: 19px;
   width: 56px;
-
   font-family: "Abel";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
   text-align: center;
-
   color: #ffffff;
 `;
 
