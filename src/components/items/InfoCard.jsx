@@ -32,7 +32,7 @@ const Info = (props) => {
     const { img, bodyProps, footerProps } = props;
     console.log(img, bodyProps, footerProps)
     return (
-        <div className="border-2 rounded-2xl py-7 px-16 m-2 flex w-100 h-[150px] justify-between">
+        <div className="border-2 rounded-2xl py-7 px-16 m-2 bg-gray-50 flex w-100 h-[150px] justify-between">
             <div className="flex">
                 <div className="my-auto">
                     <Image src={img} alt="card img" width={90} height={90} />
