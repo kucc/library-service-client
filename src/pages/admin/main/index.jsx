@@ -6,8 +6,9 @@ import RightArrow from '@components/components/items/RightArrow'
 import Option from '@components/components/items/Option'
 import imgbook from "@/img/Ellipse.png";
 import LeftArrow from '@components/components/items/LeftArrow'
-import SearchCard from '@components/components/items/SearchCard'
-import BoardTitle from '@components/components/Board/BoardTitle'
+import AdminCard from '@components/components/items/AdminCard'
+import NavItem from "@/components/items/NavItem";
+import { useState } from "react";
 
 const Search = () => {
     const router = useRouter()
@@ -15,6 +16,12 @@ const Search = () => {
     console.log(query.bookname)
     const category = ["카테고리", "전체", "인공지능", "데이터", "디자인", "게임", "하드웨어", "수학", "이론", "웹", "앱", "언어", "기타"];
     const sort = ["정렬", "제목순", "등록일순", "출판일순", "인기순", "평점순F"];
+    const nav = [
+        { navItem: "도서관리" },
+        { navItem: "등록/수정" },
+        { navItem: "공지사항" },
+        { navItem: "통계" },
+    ];
     const book = [
         {
             id: 1,
@@ -57,6 +64,7 @@ const Search = () => {
             publication_year: "2022",
         },
     ];
+    const [selected, setSelected] = useState("도서관리");
     const handleClick = (act) => {
         alert(act + "버튼 클릭!");
     };
@@ -64,13 +72,8 @@ const Search = () => {
     return (
         <>
             <div className="w-[960px] m-auto mb-[200px]">
-                <div className="mt-[53px]">
-                    <Link href="/">
-                        <LeftArrow />
-                    </Link>
-                </div>
                 <div className='flex justify-between mt-[64px] mb-[22px]'>
-                    <BoardTitle title="검색 결과" className="" />
+                    <NavItem list={nav} selectFn={setSelected} />
                     <div className='flex w-[310px] justify-between'>
                         <div className=''>
                             <Option selectOptionList={category} />
@@ -82,12 +85,12 @@ const Search = () => {
                 </div>
                 <div>
                     {book.map((e, i) => (
-                        <SearchCard
+                        <AdminCard
                             key={i}
                             img={e.img}
                             bodyProps={e}
                             footerProps={[
-                                { text: "대출", handleClick: () => handleClick("대출") },
+                                { text: "삭제", handleClick: () => handleClick("삭제") },
                             ]}
                         />
                     ))}
