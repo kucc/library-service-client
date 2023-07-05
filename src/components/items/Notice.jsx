@@ -54,7 +54,7 @@ const NoticeBoard = (props) => {
   // 테스트 데이터
   const notice = useRecoilValue(noticeBoardState);
 
-  console.log(notice);
+  // console.log(notice);
   return (
     <>
       <NoticeTitle text={props.text}></NoticeTitle>
