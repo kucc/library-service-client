@@ -33,7 +33,7 @@ const Card = (props) => {
     const { img, bodyProps, footerProps } = props;
     return (
         <div className="border-2 rounded-2xl py-7 px-16 m-2 bg-gray-50 flex w-100 h-[150px] justify-between">
-            <Link href={`/detail/${bodyProps.id}`}>
+            <Link href={`detail/${bodyProps.id}`}>
                 <div className="flex">
                     <div className="my-auto">
                         <Image src={img} alt="card img" width={90} height={90} />
