@@ -18,12 +18,6 @@ const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const list = [{ navItem: "인기도서" }, { navItem: "신착도서" }, { navItem: "장르별" }];
-  // const testOption = [
-  //   "출판년도순",
-  //   "인기순",
-  //   "제목순",
-  //   "저자순",
-  // ];
 
   return (
     <div>
