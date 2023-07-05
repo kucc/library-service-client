@@ -3,9 +3,8 @@ import { useState } from "react";
 
 const NavBar = ({ list, selectFn = () => {} }) => {
   const [focusedItem, setFocusedItem] = useState(list[0].navItem);
-  // const focusedItemClass = focusedItem == item.navItem ? "navItem-focus" : null;
   const focusedItemClass = (item) => (focusedItem == item.navItem ? "navItem-focus" : "");
-  const router = useRouter();
+  // const router = useRouter();
 
   return (
     <div className="flex ">
