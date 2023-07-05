@@ -10,16 +10,24 @@ const SearchBar = () => {
     setSearch(event.target.value);
   };
   const handleClick = () => {
-    router.push({
-      pathname: "/search",
-      query: { bookname: search },
-    });
+    if (search) {
+      router.push({
+        pathname: "/search",
+        query: { bookname: search },
+      });
+      return;
+    }
+    alert("검색어를 입력해주세요");
   };
 
   const onSubmitSearch = (e) => {
-    if (e.key === "Enter") {
-      handleClick();
+    if (search) {
+      if (e.key === "Enter") {
+        handleClick();
+      }
+      return;
     }
+    alert("검색어를 입력해주세요");
   };
 
   return (
