@@ -1,57 +1,28 @@
 import { useRouter } from "next/router";
-import { useRef, useState } from "react";
-import styled from "styled-components";
-
-const NavItem = styled.div`
-  width: 102px;
-  height: 37px;
-  text-align: center;
-  cursor: pointer;
-  &::after {
-    content: "";
-    width: 80%;
-    height: 3px;
-    display: block;
-    margin: 0 auto;
-    background-color: black;
-    border-radius: 10px;
-    margin-top: 3px;
-  }
-  &:hover {
-    color: #c3201f;
-  }
-  &:hover::after {
-    background-color: #c3201f;
-  }
-  //focus한 css코드는 global.css에서 class로 설정
-`;
+import { useState } from "react";
 
 const NavBar = ({ list, selectFn = () => {} }) => {
   const [focusedItem, setFocusedItem] = useState(list[0].navItem);
-
+  // const focusedItemClass = focusedItem == item.navItem ? "navItem-focus" : null;
+  const focusedItemClass = (item) => (focusedItem == item.navItem ? "navItem-focus" : "");
   const router = useRouter();
-  // const navigatorRoute = (link) => {
-  //   console.log(link);
-  //   if (link) {
-  //     router.push(link);
-  //   }
-  //   return;
-  // };
 
   return (
     <div className="flex ">
       {list.map((item, i) => (
-        <NavItem
+        <div
           key={i}
           onClick={() => {
             setFocusedItem(item.navItem);
             selectFn(item.navItem);
             // navigatorRoute(item["link"]);
           }}
-          className={focusedItem == item.navItem ? "navItem-focus" : null}
+          className={`${focusedItemClass(
+            item
+          )} w-[102px] h-[37px] text-center cursor-pointer after:content-[""] after:w-4/5 after:h-[3px] after:block after:mx-auto after:bg-black after:rounded-[10px] after:mt-[3px] hover:text-crimson-500 hover:after:bg-crimson-500`}
         >
           {item.navItem}
-        </NavItem>
+        </div>
       ))}
     </div>
   );
