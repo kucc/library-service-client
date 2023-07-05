@@ -84,7 +84,7 @@ const Search = () => {
                         />
                     ))}
                 </div>
-                <div className='flex mx-auto'>
+                <div className='flex justify-center mt-[35px]'>
                     <LeftArrow />
                     <RightArrow />
                 </div>
