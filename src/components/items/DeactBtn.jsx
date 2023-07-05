@@ -1,42 +1,15 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
 
-const Button = styled.button`
-  width: 117px;
-  height: 53px;
-  border-radius: 60px;
-  background: #00000080;
-
-  margin: 20px;
-
-  transition-timing-function: ease-out;
-  transition-duration: 0.3s;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-`;
-
-const ButtonText = styled.span`
-  text-align: center;
-  height: 19px;
-  width: 56px;
-
-  font-family: 'Abel';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-
-  color: #FFFFFF;
-`;
-
-const DeactBtn = (props) => {
-
+const DeactBtn = ({ width = 120, height = 50, text }) => {
   return (
-    <Button>
-      <ButtonText>{props.text}</ButtonText>
-    </Button>
+    <button
+      className={`w-[${width}px] h-[${height}px] rounded-full bg-black m-[20px] ease-out duration-300 shadow-[0px_4px_4px_rgba(0, 0, 0, 0.25)]`}
+    >
+      <span className="text-center w-[56px] h-[20px] font-normal text-[20px] text-white ">
+        {text}
+      </span>
+    </button>
   );
 };
-
 
 export default DeactBtn;

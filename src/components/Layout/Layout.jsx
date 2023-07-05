@@ -1,3 +1,5 @@
+import React from "react";
+
 const { default: Footer } = require("./Footer");
 const { default: Header } = require("./Header");
 

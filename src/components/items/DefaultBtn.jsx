@@ -1,40 +1,15 @@
 import React from "react";
-import styled from "styled-components";
 
-const Button = styled.button`
-  width: 117px;
-  height: 100%;
-  border-radius: 60px;
-  background: #c3201f;
-  margin: 3px;
-
-  transition-timing-function: ease-out;
-  transition-duration: 0.3s;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-  &:active {
-    background-color: #a71622;
-  }
-`;
-
-const ButtonText = styled.span`
-  text-align: center;
-  height: 19px;
-  width: 56px;
-  font-family: "Abel";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-  color: #ffffff;
-`;
-
-const DefaultBtn = (props) => {
+const DefaultBtn = ({ width = 120, height = 50, text, handleClick }) => {
   return (
-    <Button onClick={props.handleClick}>
-      <ButtonText>{props.text}</ButtonText>
-    </Button>
+    <button
+      onClick={handleClick}
+      className={`w-[${width}px] h-[${height}px] rounded-full bg-crimson-500 ease-out duration-300 shadow-[0_4px_4px_rgba(0,0,0,0.3)] active:bg-[#a71622]`}
+    >
+      <span className="text-center h-[20px] w-[56px] font-normal text-[20px] text-white">
+        {text}
+      </span>
+    </button>
   );
 };
 
