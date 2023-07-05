@@ -52,6 +52,9 @@ const Search = () => {
             publication_year: "2022",
         },
     ];
+    const handleClick = (act) => {
+      alert(act + "버튼 클릭!");
+    };
 
     return (
         <>
