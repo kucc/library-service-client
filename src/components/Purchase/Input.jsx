@@ -3,7 +3,7 @@ const PurchaseInput = ({ label, placeholder, value, onChangeFn }) => {
     onChangeFn(event.target.value);
   };
   return (
-    <div className="flex h-[60px] justify-between items-center mb-[30px]">
+    <div className={`flex  h-[60px] justify-between items-center mb-[30px]`}>
       <label className="w-[100px] mr-[60px]">{label}</label>
       <input
         type="text"

@@ -1,7 +1,7 @@
 import Header from "@/components/Layout/Header";
 import avatar from "../../img/Ellipse.png";
 import Image from "next/image";
-import NavItem from "@/components/items/NavItem";
+import NavItem from "@components/components/items/NavBar";
 import DefaultBtn from "@/components/items/DefaultBtn";
 import InfoCard from "@/components/items/InfoCard";
 import { useState } from "react";
