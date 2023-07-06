@@ -6,7 +6,7 @@ import { useQuery } from "react-query";
 import Image from "next/image";
 import thumbnail from "../img/thumbnail.png";
 import Header from "@/components/Layout/Header";
-import NavItem from "@/components/items/NavItem";
+import NavItem from "@components/components/items/NavBar";
 import Option from "@/components/items/Option";
 import Footer from "@/components/Layout/Footer";
 import Slide from "@/components/items/Slide";

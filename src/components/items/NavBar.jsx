@@ -1,8 +1,8 @@
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-const NavBar = ({ list, selectFn = () => {} }) => {
-  const [focusedItem, setFocusedItem] = useState(list[0].navItem);
+const NavBar = ({ list, selectFn = () => {}, selected }) => {
+  const [focusedItem, setFocusedItem] = useState(selected || list[0].navItem);
   const focusedItemClass = (item) => (focusedItem == item.navItem ? "navItem-focus" : "");
   // const router = useRouter();
 

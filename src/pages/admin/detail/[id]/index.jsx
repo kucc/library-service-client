@@ -10,24 +10,39 @@ import DefaultBtn from "@/components/items/DefaultBtn";
 import imgbook from "@/img/Ellipse.png";
 
 import { useRouter } from "next/router";
-import NavItem from "@/components/items/NavItem";
+import NavItem from "@components/components/items/NavBar";
 import { useRecoilValue } from "recoil";
 import ReviewCard from "@/components/items/ReviewCard";
 import LeftArrow from "@/components/items/LeftArrow";
 import Link from "next/link";
 import { useState } from "react";
 
-
 const Detail = () => {
   const router = useRouter();
-    const [selected, setSelected] = useState("대출 내역");
-  const [review, setReview] = useState({ star: 0, content: "" })
+  const [selected, setSelected] = useState("대출 내역");
+  const [review, setReview] = useState({ star: 0, content: "" });
   const { id } = router.query;
-  const data = { id: id, img: book, title: "파이썬 갈기기", author: "작가", publisher: "출판사", publication_year: "2023", genre: "장르", star: 4.5, disable: true };
+  const data = {
+    id: id,
+    img: book,
+    title: "파이썬 갈기기",
+    author: "작가",
+    publisher: "출판사",
+    publication_year: "2023",
+    genre: "장르",
+    star: 4.5,
+    disable: true,
+  };
   const { img, title, author, publisher, publication_year, genre, star, disable } = data;
-  const reviews = [{ id: 1, img: imgbook, name: "user1", content: "this is very very goot", star: 4.5 }, { id: 2, img: imgbook, name: "user1", content: "this is very very goot", star: 4.5 }, { id: 1, img: imgbook, name: "user3", content: "this is very very goot", star: 4.5 },]
+  const reviews = [
+    { id: 1, img: imgbook, name: "user1", content: "this is very very goot", star: 4.5 },
+    { id: 2, img: imgbook, name: "user1", content: "this is very very goot", star: 4.5 },
+    { id: 1, img: imgbook, name: "user3", content: "this is very very goot", star: 4.5 },
+  ];
   const headerItems = useRecoilValue(headerItemState);
-  const handleClick = () => { alert("대출예약") }
+  const handleClick = () => {
+    alert("대출예약");
+  };
   const handlechange = (e) => {
     setReview({ ...review, [e.target.name]: e.target.value });
   };
