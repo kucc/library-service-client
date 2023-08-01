@@ -30,65 +30,27 @@ const Purchase = () => {
           </Link>
         </div>
         <BoardTitle title="구매신청" className="mt-[53px] mb-[49px]" />
-        <div className="flex justify-between w-full">
-          <div className="w-[440px]">
-            <PurchaseInput
-              label={"제목"}
-              placeholder={"책 제목을 입력하세요"}
-              value={bookTitle}
-              onChangeFn={setBookTitle}
-            />
-            <PurchaseInput
-              label={"부제목"}
-              placeholder={"부제목을 입력하세요"}
-              value={bookSubtitle}
-              onChangeFn={setBookSubtitle}
-            />
-            <PurchaseInput
-              label={"저자"}
-              placeholder={"저자 이름을 입력하세요"}
-              value={author}
-              onChangeFn={setAuthor}
-            />
-            <PurchaseInput
-              label={"출판사"}
-              placeholder={"출판사를 입력하세요"}
-              value={publisher}
-              onChangeFn={setPublisher}
-            />
-          </div>
-          <div className="w-[440px]">
-            <PurchaseInput
-              label={"출판연도 또는 판"}
-              placeholder={"출판연도를 입력해주세요"}
-              value={publishYear}
-              onChangeFn={setPublishYear}
-            />
-            <PurchaseInput
-              label={"구입 링크"}
-              placeholder={"링크를 입력해주세요"}
-              value={purchaseUrl}
-              onChangeFn={setPurhcaseUrl}
-            />
-          </div>
+        <div className="flex flex-col gap-[20px]">
+          <PurchaseInput
+            label={"제목"}
+            placeholder={"책 제목을 입력하세요"}
+            value={bookTitle}
+            onChangeFn={setBookTitle}
+          />
+          <PurchaseInput
+            label={"구입 링크"}
+            placeholder={"링크를 입력해주세요"}
+            value={purchaseUrl}
+            onChangeFn={setPurhcaseUrl}
+          />
+          <PurchaseInput
+            label={"신청 사유"}
+            placeholder={"입력하세요"}
+            value={reason}
+            onChangeFn={setReason}
+          />
         </div>
-        <div className="flex items-start justify-between w-full mt-[90px] ">
-          <div className="w-[440px]">
-            <div className="mb-[25px]">이번 학기 컴퓨터 학과 전공 도서 여부</div>
-            <Radio value="yes" id="choice1" name="major" label="예" />
-            <Radio value="no" id="choice2" name="major" label="아니오" />
-            <Radio value="dontKnow" id="choice3" name="major" label="모름" />
-          </div>
-          <div className="w-[440px] flex items-start">
-            <PurchaseInput
-              label={"신청 사유"}
-              placeholder={"입력하세요"}
-              value={reason}
-              onChangeFn={setReason}
-            />
-          </div>
-        </div>
-        <div className="text-center w-full h-[53px] mt-[130px]">
+        <div className="text-center w-full h-[53px] mt-[60px]">
           <DefaultBtn text="등록" handleClick={submitPurchase} />
         </div>
       </div>
