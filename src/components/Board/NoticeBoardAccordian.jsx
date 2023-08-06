@@ -13,10 +13,6 @@ const NoticeBoardItemAccordian = ({
   console.log(clicked_item);
   const [isOpen, setIsOpen] = useState(notice_id === clicked_item ? true : false);
 
-  const toggleItem = () => {
-    setIsOpen((prev) => !prev);
-  };
-
   const handleOpen = () => {
     setIsOpen((prev) => !prev);
   };
