@@ -5,19 +5,33 @@ import Link from "next/link";
 import { useQuery } from "react-query";
 import Image from "next/image";
 import thumbnail from "../img/thumbnail.png";
-import Header from "@/components/Layout/Header";
+
 import NavItem from "@components/components/items/NavBar";
-import Option from "@/components/items/Option";
-import Footer from "@/components/Layout/Footer";
+
 import Slide from "@/components/items/Slide";
 import SearchBar from "@/components/items/SearchBar";
-import { headerItemState } from "@/recoil/atoms/headerItemAtom";
 import NoticeBoard from "@/components/items/Notice";
+import { useEffect } from "react";
+import baseURLState from "@components/recoil/atoms/apiAtom";
+import axios from "axios";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const list = [{ navItem: "인기도서" }, { navItem: "신착도서" }, { navItem: "장르별" }];
+  const baseURL = useRecoilValue(baseURLState);
+
+  useEffect(() => {
+    // const response = fetch("http://gutendex.com/books/")
+    //   .then((response) => response.json())
+    //   .then((quote) => console.log(quote));
+    // axios.get("http://118.67.134.56:8080/").then((res) => {
+    //   console.log(res);
+    // });
+    // const response2 = fetch("http://118.67.134.56:8080/books/")
+    //   .then((response) => response.json())
+    //   .then((quote) => console.log(quote));
+  }, [baseURL]);
 
   return (
     <div>

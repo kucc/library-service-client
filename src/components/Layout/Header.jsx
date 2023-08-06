@@ -13,29 +13,6 @@ const Header = ({
   ],
 }) => {
   const [headerSearchItem, setHeaderSearchItem] = useState("");
-
-  const [scrollDirection, setScrollDirection] = useState("");
-  // const [yPosition, setYPosition] = useState();
-  // useEffect(() => {
-  //   const currentY = window.pageYOffset;
-  //   window.addEventListener("scroll", (e) => {
-  //     let lateY = 0;
-
-  //     lateY = window.pageYOffset;
-
-  //     const direction = lateY > currentY ? "down" : "up";
-  //     // setYPosition(window.pageYOffset);
-  //     // const direction =
-  //     //   window.pageYOffset - 10 > currentY
-  //     //     ? "down"
-  //     //     : window.pageYOffset + 10 < currentY
-  //     //     ? "up"
-  //     //     : scrollDirection;
-  //     // setScrollDirection(direction);
-  //     console.log(currentY, lateY);
-  //     console.log(direction);
-  //   });
-  // }, [scrollDirection]);
   return (
     <>
       <div
