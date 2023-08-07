@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 const AdminMenu = ({ menuItem, idx, activeIdx, active, setActiveIdx, subMenu }) => {
-  console.log(subMenu);
   return (
     <>
       <div

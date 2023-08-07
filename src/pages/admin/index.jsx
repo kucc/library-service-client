@@ -1,5 +1,6 @@
 import AdminMenu from "@components/components/Admin/AdminMenu";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const Admin = () => {
@@ -38,7 +39,9 @@ const Admin = () => {
   return (
     <div className="flex justify-around my-[100px] h-[500px]">
       <div className="flex items-center">
-        <Image src="/admin-thumbnail.png" alt="admin-logo" width={300} height={100} />
+        <Link href="/">
+          <Image src="/admin-thumbnail.png" alt="admin-logo" width={300} height={100} />
+        </Link>
       </div>
       <div className="flex flex-col gap-[10px] items-center justify-center">
         {adminMenu.map((menu, index) => {
