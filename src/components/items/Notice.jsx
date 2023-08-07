@@ -1,14 +1,31 @@
 import noticeBoardState from "@components/recoil/atoms/noticeBoardAtom";
 import Link from "next/link";
+import { useState } from "react";
 import { useRecoilValue } from "recoil";
 
 const Notice = ({ title = "서버점검안내", date = "2023.03.12" }) => {
+  const [isHover, setHover] = useState(false);
   return (
     <div
-      className={`w-[349px] h-[33px] py-[7px] mb-[27px] flex text-[15px] items-center font-normal active:text-[#777777]`}
+      className={`w-[349px] h-[33px] py-[7px] mb-[27px] flex text-[15px] items-center font-normal   active:text-[#777777]`}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
-      <div className="mr-[92px] text-left">{title}</div>
-      <div className="ml-[92px] text-right text-[#000000B2]">{date}</div>
+      <div
+        className={`mr-[92px]  text-left transition-all duration-300 ${
+          isHover ? "opacity-0" : "opacity-100"
+        } `}
+      >
+        {title}
+      </div>
+
+      <div
+        className={`ml-[92px] text-[#000000B2] duration-300 relative right-0  ${
+          isHover ? "ml-0 right-[130px]" : ""
+        }`}
+      >
+        {date}
+      </div>
     </div>
   );
 };
@@ -57,7 +74,9 @@ const NoticeBoard = (props) => {
   // console.log(notice);
   return (
     <>
-      <NoticeTitle text={props.text}></NoticeTitle>
+      <Link href={props.href}>
+        <NoticeTitle text={props.text} />
+      </Link>
       {notice.map((notice_content) => {
         return (
           <Link
@@ -70,7 +89,7 @@ const NoticeBoard = (props) => {
       })}
 
       <Link href="/notice">
-        <NoticeMore></NoticeMore>
+        <NoticeMore />
       </Link>
     </>
   );

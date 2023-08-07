@@ -50,7 +50,7 @@ export default function Home() {
         </div>
         <div className="flex justify-center mb-[194px]">
           <div className="mr-[118px]">
-            <NoticeBoard text="공지사항" className="w-[348px] h-[240px]" />
+            <NoticeBoard text="공지사항" href="/notice" className="w-[348px] h-[240px]" />
           </div>
           <div>
             <svg
@@ -64,7 +64,7 @@ export default function Home() {
             </svg>
           </div>
           <div className="ml-[118px]">
-            <NoticeBoard text="도서 신청 현황" className="w-[348px] h-[240px]" />
+            <NoticeBoard text="도서 신청 현황" href="/notice" className="w-[348px] h-[240px]" />
           </div>
         </div>
       </div>
